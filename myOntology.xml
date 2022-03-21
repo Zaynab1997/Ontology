@@ -1,0 +1,740 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY wban "http://lina.ataouna.org/MyOntoSensWSN#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:wban="http://lina.ataouna.org/MyOntoSensWSN#">
+    <Ontology rdf:about="http://lina.ataouna.org/MyOntoSensWSN"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Brother -->
+
+    <ObjectProperty rdf:about="&wban;Brother">
+        <rdfs:subPropertyOf rdf:resource="&wban;Family"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Children -->
+
+    <ObjectProperty rdf:about="&wban;Children">
+        <rdfs:subPropertyOf rdf:resource="&wban;Family"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#CommunicationPeriod -->
+
+    <ObjectProperty rdf:about="&wban;CommunicationPeriod">
+        <rdfs:domain rdf:resource="&wban;Periodic"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Cousin -->
+
+    <ObjectProperty rdf:about="&wban;Cousin">
+        <rdfs:subPropertyOf rdf:resource="&wban;Family"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Family -->
+
+    <ObjectProperty rdf:about="&wban;Family">
+        <rdfs:subPropertyOf rdf:resource="&wban;isRelativeof"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Friend -->
+
+    <ObjectProperty rdf:about="&wban;Friend">
+        <rdfs:subPropertyOf rdf:resource="&wban;isRelativeof"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Height -->
+
+    <ObjectProperty rdf:about="&wban;Height">
+        <rdfs:domain rdf:resource="&wban;Patient"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#HipCircumference -->
+
+    <ObjectProperty rdf:about="&wban;HipCircumference">
+        <rdfs:domain rdf:resource="&wban;Patient"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#MaxHR -->
+
+    <ObjectProperty rdf:about="&wban;MaxHR">
+        <rdfs:domain rdf:resource="&wban;Patient"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Neighbors -->
+
+    <ObjectProperty rdf:about="&wban;Neighbors">
+        <rdfs:subPropertyOf rdf:resource="&wban;Friend"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Other -->
+
+    <ObjectProperty rdf:about="&wban;Other">
+        <rdfs:subPropertyOf rdf:resource="&wban;isRelativeof"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Parent -->
+
+    <ObjectProperty rdf:about="&wban;Parent">
+        <rdfs:subPropertyOf rdf:resource="&wban;Family"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Responsible -->
+
+    <ObjectProperty rdf:about="&wban;Responsible">
+        <rdfs:subPropertyOf rdf:resource="&wban;isRelativeof"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#RestingHR -->
+
+    <ObjectProperty rdf:about="&wban;RestingHR">
+        <rdfs:domain rdf:resource="&wban;Patient"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Sister -->
+
+    <ObjectProperty rdf:about="&wban;Sister">
+        <rdfs:subPropertyOf rdf:resource="&wban;Family"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#WaistCircumference -->
+
+    <ObjectProperty rdf:about="&wban;WaistCircumference">
+        <rdfs:domain rdf:resource="&wban;Patient"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Weight -->
+
+    <ObjectProperty rdf:about="&wban;Weight">
+        <rdfs:domain rdf:resource="&wban;Patient"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#belongTo -->
+
+    <ObjectProperty rdf:about="&wban;belongTo">
+        <rdfs:domain rdf:resource="&wban;Cluster"/>
+        <rdfs:range rdf:resource="&wban;WSN"/>
+        <inverseOf rdf:resource="&wban;isFormedof"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#hasCommunicationProcess -->
+
+    <ObjectProperty rdf:about="&wban;hasCommunicationProcess">
+        <rdfs:range rdf:resource="&wban;CommunicationProcess"/>
+        <rdfs:domain rdf:resource="&wban;WSN"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#hasContact -->
+
+    <ObjectProperty rdf:about="&wban;hasContact">
+        <rdfs:range rdf:resource="&wban;Contact"/>
+        <rdfs:domain rdf:resource="&wban;WSN"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#hasOwner -->
+
+    <ObjectProperty rdf:about="&wban;hasOwner">
+        <rdfs:subPropertyOf rdf:resource="&wban;hasContact"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#isFormedof -->
+
+    <ObjectProperty rdf:about="&wban;isFormedof">
+        <rdfs:range rdf:resource="&wban;Cluster"/>
+        <rdfs:domain rdf:resource="&wban;WSN"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#isRelativeof -->
+
+    <ObjectProperty rdf:about="&wban;isRelativeof">
+        <rdfs:range rdf:resource="&wban;Person"/>
+        <rdfs:domain rdf:resource="&wban;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#uses -->
+
+    <ObjectProperty rdf:about="&wban;uses">
+        <rdfs:range rdf:resource="&wban;Cluster"/>
+        <rdfs:domain rdf:resource="&wban;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Affiliation -->
+
+    <DatatypeProperty rdf:about="&wban;Affiliation">
+        <rdfs:subPropertyOf rdf:resource="&wban;Name"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Age -->
+
+    <DatatypeProperty rdf:about="&wban;Age">
+        <rdfs:domain rdf:resource="&wban;Person"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#ApplicationDomain -->
+
+    <DatatypeProperty rdf:about="&wban;ApplicationDomain">
+        <rdfs:domain rdf:resource="&wban;WSN"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Channel -->
+
+    <DatatypeProperty rdf:about="&wban;Channel">
+        <rdfs:domain rdf:resource="&wban;Cluster"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#ClusterID -->
+
+    <DatatypeProperty rdf:about="&wban;ClusterID">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&wban;Cluster"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Density -->
+
+    <DatatypeProperty rdf:about="&wban;Density">
+        <rdfs:domain rdf:resource="&wban;WSN"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#DeploymentTime -->
+
+    <DatatypeProperty rdf:about="&wban;DeploymentTime">
+        <rdfs:domain rdf:resource="&wban;WSN"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#DownLimit -->
+
+    <DatatypeProperty rdf:about="&wban;DownLimit">
+        <rdfs:subPropertyOf rdf:resource="&wban;FatBurnHR"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#FName -->
+
+    <DatatypeProperty rdf:about="&wban;FName">
+        <rdfs:subPropertyOf rdf:resource="&wban;Name"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#FatBurnHR -->
+
+    <DatatypeProperty rdf:about="&wban;FatBurnHR">
+        <rdfs:domain rdf:resource="&wban;Patient"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#FaultTolerence -->
+
+    <DatatypeProperty rdf:about="&wban;FaultTolerence">
+        <rdfs:domain rdf:resource="&wban;WSN"/>
+        <rdfs:range rdf:resource="&owl;real"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Gender -->
+
+    <DatatypeProperty rdf:about="&wban;Gender">
+        <rdfs:domain rdf:resource="&wban;Person"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#LName -->
+
+    <DatatypeProperty rdf:about="&wban;LName">
+        <rdfs:subPropertyOf rdf:resource="&wban;Name"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Language -->
+
+    <DatatypeProperty rdf:about="&wban;Language">
+        <rdfs:domain rdf:resource="&wban;Patient"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Link -->
+
+    <DatatypeProperty rdf:about="&wban;Link">
+        <rdfs:domain rdf:resource="&wban;OnlineRessource"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#MName -->
+
+    <DatatypeProperty rdf:about="&wban;MName">
+        <rdfs:subPropertyOf rdf:resource="&wban;Name"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Name -->
+
+    <DatatypeProperty rdf:about="&wban;Name">
+        <rdfs:domain rdf:resource="&wban;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#NbNodes -->
+
+    <DatatypeProperty rdf:about="&wban;NbNodes">
+        <rdfs:domain rdf:resource="&wban;Cluster"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Phenomena -->
+
+    <DatatypeProperty rdf:about="&wban;Phenomena">
+        <rdfs:domain rdf:resource="&wban;WSN"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Phone -->
+
+    <DatatypeProperty rdf:about="&wban;Phone">
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&wban;Person"/>
+                    <rdf:Description rdf:about="&wban;ResponsibleParty"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#RadioTech -->
+
+    <DatatypeProperty rdf:about="&wban;RadioTech">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&wban;Cluster"/>
+                    <rdf:Description rdf:about="&wban;WSN"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Role -->
+
+    <DatatypeProperty rdf:about="&wban;Role">
+        <rdfs:domain rdf:resource="&wban;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Topology -->
+
+    <DatatypeProperty rdf:about="&wban;Topology">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>Adhoc</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>Mesh</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>Others</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first>P2P</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                        <rdf:first>Star</rdf:first>
+                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&wban;Cluster"/>
+                    <rdf:Description rdf:about="&wban;WSN"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#UpLimit -->
+
+    <DatatypeProperty rdf:about="&wban;UpLimit">
+        <rdfs:subPropertyOf rdf:resource="&wban;FatBurnHR"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#UserID -->
+
+    <DatatypeProperty rdf:about="&wban;UserID">
+        <rdfs:domain rdf:resource="&wban;Person"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#WSNID -->
+
+    <DatatypeProperty rdf:about="&wban;WSNID">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&wban;WSN"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#YoB -->
+
+    <DatatypeProperty rdf:about="&wban;YoB">
+        <rdfs:domain rdf:resource="&wban;Person"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#email -->
+
+    <DatatypeProperty rdf:about="&wban;email">
+        <rdfs:domain rdf:resource="&wban;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#ByRequest -->
+
+    <Class rdf:about="&wban;ByRequest">
+        <rdfs:subClassOf rdf:resource="&wban;CommunicationProcess"/>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Cluster -->
+
+    <Class rdf:about="&wban;Cluster">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&wban;belongTo"/>
+                <onClass rdf:resource="&wban;WSN"/>
+                <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#CommunicationProcess -->
+
+    <Class rdf:about="&wban;CommunicationProcess"/>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Contact -->
+
+    <Class rdf:about="&wban;Contact">
+        <equivalentClass>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&wban;OnlineRessource"/>
+                    <rdf:Description rdf:about="&wban;Person"/>
+                    <rdf:Description rdf:about="&wban;ResponsibleParty"/>
+                </unionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Event_Driven -->
+
+    <Class rdf:about="&wban;Event_Driven">
+        <rdfs:subClassOf rdf:resource="&wban;CommunicationProcess"/>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#OnlineRessource -->
+
+    <Class rdf:about="&wban;OnlineRessource">
+        <rdfs:subClassOf rdf:resource="&wban;Contact"/>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Organization -->
+
+    <Class rdf:about="&wban;Organization">
+        <rdfs:subClassOf rdf:resource="&wban;ResponsibleParty"/>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Patient -->
+
+    <Class rdf:about="&wban;Patient">
+        <rdfs:subClassOf rdf:resource="&wban;Person"/>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Periodic -->
+
+    <Class rdf:about="&wban;Periodic">
+        <rdfs:subClassOf rdf:resource="&wban;CommunicationProcess"/>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#Person -->
+
+    <Class rdf:about="&wban;Person">
+        <rdfs:subClassOf rdf:resource="&wban;Contact"/>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#ResponsibleParty -->
+
+    <Class rdf:about="&wban;ResponsibleParty">
+        <equivalentClass>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&wban;Organization"/>
+                    <rdf:Description rdf:about="&wban;Person"/>
+                </unionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="&wban;Contact"/>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#WBAN -->
+
+    <Class rdf:about="&wban;WBAN">
+        <rdfs:subClassOf rdf:resource="&wban;WSN"/>
+    </Class>
+    
+
+
+    <!-- http://lina.ataouna.org/MyOntoSensWSN#WSN -->
+
+    <Class rdf:about="&wban;WSN"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#P">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#P1">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&wban;Sister"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#P"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#P1"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&wban;Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#P"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest rdf:resource="&rdf;nil"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="&wban;Sister"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#P"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#P1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
